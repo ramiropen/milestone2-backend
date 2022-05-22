@@ -22,8 +22,8 @@ app.use(express.json()); // parse incoming requests with JSON payloads
 
 // 3. routes & controllers
 // employee controller
-const employeeController = require("./controllers/employee.js");
-app.use("/employee", employeeController);
+const itemsController = require("./controllers/items.js");
+app.use("/items", itemsController);
 
 // 404 error
 app.get("*", (req, res) => {
