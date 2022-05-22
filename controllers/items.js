@@ -8,6 +8,12 @@ items.get("/", async (req, res) => {
   res.json(myItems);
 });
 
+// retrieve data
+items.get("/:id", async (req, res) => {
+  const myItem = await Item.findById(req.params.id);
+  res.json(myItem);
+});
+
 // CREATE
 items.post("/", (req, res) => {
   Item.create(req.body); // sends req.body to the model, which sends it to the database
